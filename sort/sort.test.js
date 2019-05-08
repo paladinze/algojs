@@ -1,6 +1,8 @@
-const S = require('./mergesort');
-const mergeSort = S.mergeSort;
-const merge = S.merge;
+const MergeSort = require('./mergesort');
+const mergeSort = MergeSort.mergeSort;
+const merge = MergeSort.merge;
+
+const selectionSort = require('./selectionsort');
 
 function getArray() {
   return [100, -40, 500, -124, 0, 21, 7];
@@ -20,5 +22,17 @@ describe('Merge sort', () => {
 
   test('sorts an array', () => {
     expect(mergeSort(getArray())).toEqual(getSortedArray());
+  });
+});
+
+describe('Bubble sort', () => {
+  test('sorts an array', () => {
+    expect(bubbleSort(getArray())).toEqual(getSortedArray());
+  });
+});
+
+describe('Selection sort', () => {
+  test('sorts an array', () => {
+    expect(selectionSort(getArray())).toEqual(getSortedArray());
   });
 });
