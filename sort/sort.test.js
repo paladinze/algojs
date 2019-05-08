@@ -3,6 +3,7 @@ const mergeSort = MergeSort.mergeSort;
 const merge = MergeSort.merge;
 
 const selectionSort = require('./selectionsort');
+const bubbleSort = require('./bubblesort');
 
 function getArray() {
   return [100, -40, 500, -124, 0, 21, 7];
