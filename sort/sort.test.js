@@ -6,6 +6,7 @@ const selectionSort = require('./selectionsort');
 const bubbleSort = require('./bubblesort');
 
 const quickSort = require('./quicksort');
+const quickSort2 = require('./quicksort2');
 
 function getArray() {
   return [100, -40, 500, -124, 0, 21, 7];
@@ -43,5 +44,11 @@ describe('Selection sort', () => {
 describe('Quicksort', () => {
   test('quicksort an array', () => {
     expect(quickSort(getArray())).toEqual(getSortedArray());
+  })
+})
+
+describe('Quicksort2', () => {
+  test('quicksort an array using extra arrays', () => {
+    expect(quickSort2(getArray())).toEqual(getSortedArray());
   })
 })
