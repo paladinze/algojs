@@ -3,6 +3,7 @@ const mergeSort = MergeSort.mergeSort;
 const merge = MergeSort.merge;
 
 const selectionSort = require('./selectionsort');
+const insertSort = require('./insertsort');
 const bubbleSort = require('./bubblesort');
 
 const quickSort = require('./quicksort');
@@ -30,6 +31,12 @@ describe('Merge sort', () => {
 });
 
 describe('Bubble sort', () => {
+  test('sorts an array', () => {
+    expect(bubbleSort(getArray())).toEqual(getSortedArray());
+  });
+});
+
+describe('Insert sort', () => {
   test('sorts an array', () => {
     expect(bubbleSort(getArray())).toEqual(getSortedArray());
   });
