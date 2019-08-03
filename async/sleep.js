@@ -1,3 +1,5 @@
+// 实现一个 sleep 函数
+
 // short version
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
