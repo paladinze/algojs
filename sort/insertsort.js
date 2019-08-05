@@ -1,5 +1,4 @@
 function insertsort(arr) {
-
   for (let i = 1; i < arr.length; i++) {
     let curr = arr[i];
 
@@ -14,10 +13,9 @@ function insertsort(arr) {
 
     // insert the curr one to the stopped location
     arr[j + 1] = curr;
-
   }
 
-  return arr
+  return arr;
 }
 
 module.exports = insertsort;
