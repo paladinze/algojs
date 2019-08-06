@@ -1,21 +1,21 @@
-//  One string is an anagram of another if it uses the same characters
+// One string is an anagram of another if it uses the same characters
 
 function cleanStr(str) {
   str = str.toLowerCase();
-  str.replace(/[^\w]/g, '');
+  str.replace(/[^\w]/g, "");
   return str;
 }
 
 function getCharmap(str) {
-  let charmap = {}
-  str.split('').forEach(char => {
+  let charmap = {};
+  str.split("").forEach(char => {
     if (charmap[char]) {
-      charmap[char] ++; 
+      charmap[char]++;
     } else {
       charmap[char] = 1;
     }
-  })
-  return charmap
+  });
+  return charmap;
 }
 
 function anagram(strA, strB) {
@@ -37,7 +37,6 @@ function anagram(strA, strB) {
     }
   }
   return true;
-
 }
 
 module.exports = anagram;

@@ -51,6 +51,8 @@ class Tree {
       fn(node);
     }
   }
+
+  inorder
 }
 
 module.exports = { Tree, Node };

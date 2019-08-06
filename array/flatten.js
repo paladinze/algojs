@@ -14,10 +14,18 @@ function flatten(arr) {
 let arr1 = [1, 2, [1, 3, 4]];
 console.log(flatten(arr1));
 
-let arr2 = [
-  [1, 2, 2],
-  [3, 4, 5, 5],
-  [6, 7, 8, 9, [11, 12, [12, 13, [14]]]],
-  10
-];
-console.log(flatten(arr2));
+// 递归方法，支持数组包含object
+let result = [];
+function flatten(arr) {
+  for (const i of arr) {
+    if (i instanceof Array) {
+      flatten(i);
+    } else {
+      result.push(i);
+    }
+  }
+}
+
+let arr2 = [1, 2, 3, [4, 5, 6], [{ a: 1 }]];
+flatten(arr2);
+console.log(result);

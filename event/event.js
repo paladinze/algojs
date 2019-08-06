@@ -1,7 +1,7 @@
 // --- Directions
 // Create an 'eventing' library out of the
 // Events class.  The Events class should
-// have methods 'on', 'trigger', and 'off'.
+// have methods 'on', 'off', 'once', 'emit'
 
 class Events {
   constructor() {
@@ -15,12 +15,21 @@ class Events {
     } else {
       this.events[eventName] = [callback];
     }
+  }
 
+  // Register event handler
+  // remove itself after running once
+  once(eventName, cb) {
+    let wrapper = (...args) => {
+      cb.apply(args);
+      this.off(eventName, cb);
+    };
+    this.on(eventName, wrapper);
   }
 
   // Trigger all callbacks associated
   // with a given eventName
-  trigger(eventName) {
+  emit(eventName) {
     const cbs = this.events[eventName];
     if (!cbs) {
       return false;

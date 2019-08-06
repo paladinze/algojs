@@ -5,27 +5,23 @@
  *  通常使用场景: 滚动条事件 通常每隔 100~500 ms执行一次即可。
  */
 
-function throttle(fn, wait, callNow) {
+function throttle(fn, waitTime, callNow) {
   let timer = null;
 
   return function() {
-    let args = arguments;
-    let _this = this;
-
     if (callNow) {
-      fn.apply(_this, args);
+      fn.apply(this, arguments);
       callNow = false;
     }
 
     if (!timer) {
       timer = setTimeout(() => {
-        fn.apply(_this, args);
+        fn.apply(this, arguments);
         timer = null;
-      }, wait);
+      }, waitTime);
     }
   };
 }
-
 function sayMyName() {
   console.log("Hi");
 }

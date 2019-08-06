@@ -5,22 +5,22 @@
  * 例子：搜索框预览搜索结果
  */
 
-function debounce(fn, wait, callNow) {
+//es6
+function debounce(fn, waitTime, callNow) {
   let timer = null;
 
   return function() {
-    let args = arguments;
-    let _this = this;
-
     if (callNow) {
-      fn.apply(_this, args);
+      fn.apply(this, arguments);
       callNow = false;
     }
 
-    if (timer) clearTimeout(timer);
+    if (timer) {
+      clearTimeout(timer);
+    }
     timer = setTimeout(() => {
-      fn.apply(_this, args);
-    }, wait);
+      fn.apply(this, arguments);
+    }, waitTime);
   };
 }
 
