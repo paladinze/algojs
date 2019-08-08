@@ -39,3 +39,15 @@ var hasPathSum = function(root, target) {
   func(root, sum);
   return result;
 };
+
+function Node(val) {
+  this.val = val;
+  this.left = this.right = null;
+}
+
+const n1 = new Node(3);
+const n2 = new Node(4);
+const n3 = new Node(4);
+n1.left = n2;
+n1.right = n3;
+console.log(hasPathSum(n1, 8));
